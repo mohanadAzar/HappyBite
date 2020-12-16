@@ -41,7 +41,10 @@ INSTALLED_APPS = [
 
     #My Apps
     'donation',
+    'charity' ,
+    'beneficiary',
     'bootstrap4',
+    'phonenumber_field',
 
 
 ]

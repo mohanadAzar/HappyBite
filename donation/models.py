@@ -28,6 +28,16 @@ class Donation(models.Model):
 
 
 
+
+
+    def  is_available (self):
+        if datetime.datetime.now >= Expiry_Date:
+            self.Available = False
+        return self.Available
+
+
+
+
     def save(self, *args, **kwargs): 
       if not self.Slug:
           self.Slug = slugify(self.Name) 
