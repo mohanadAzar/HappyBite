@@ -18,7 +18,8 @@ from django.urls import include, path
 
 
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('charity/', include('charity.urls',namespace='charity')),
+    path('donor/', include('donor.urls',namespace='donor')),
     path('admin/', admin.site.urls),
     path('donation/', include('donation.urls',namespace='donation')),
 ]

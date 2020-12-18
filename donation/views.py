@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Donation
 from .form import DonationForm
+from donor.models import Donor
+from charity.models import Charity
 # Create your views here.
 
 
@@ -9,7 +11,7 @@ from .form import DonationForm
 
 
 def donation_list(request):
-    donation_list = Donation.objects.all()
+    donation_list = Donation.objects.filter(Available = True)
 
     context ={
         'donations' : donation_list ,
