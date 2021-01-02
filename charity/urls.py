@@ -8,7 +8,7 @@ app_name = 'Charity'
 
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='StoreAdminAccounts/templates/registration/logged_out.html'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),
 
     path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
@@ -28,6 +28,7 @@ urlpatterns = [
 
 
     path('mydonations', views.CharityDonationView, name='mydonations'),
-
+    path('all_bene/<int:id>',views.view_all_bene , name='all_bene'),
+    path('detail_bene/<int:id>',views.Detail_bene_View , name='detail_bene'),
 
 ]

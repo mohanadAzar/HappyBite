@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render
 from .forms import CharitySignupForm , CharityUserForm , CharityProfileForm  , mydonations
 from django.contrib.auth import authenticate, login
-from .models import Charity
-from donation.models import Donation
+from .models import Charity , Beneficiary
+from donation.models import Donation 
 from django.urls import reverse
 # Create your views here.
 
@@ -61,5 +61,20 @@ def CharityDonationView(request):
     return render(request,'mydonations.html',{'mydonations': CharityProfile})
 
 
+def view_all_bene(request,id):
+    all_bene = Beneficiary.objects.filter(charity_id=id)
+    context = { 'all_bene' : all_bene
+    }
+    return render(request , 'bene.html' , context)
+    
+
+
+def Detail_bene_View(request,id):
+    print('#########',id)
+    detail_bene = Beneficiary.objects.get(id=id)
+    print(detail_bene,'-------------------')
+    context = { 'detail_bene' : detail_bene
+    }
+    return render(request , 'ben_detail.html' , { 'detail_bene' : detail_bene})
 
 

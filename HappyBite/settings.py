@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     #My Apps
     'donation',
     
-    'beneficiary',
+    #'beneficiary',
     'bootstrap4',
     'phonenumber_field',
 
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'HappyBite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
